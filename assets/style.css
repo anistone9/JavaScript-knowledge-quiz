@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    background-repeat: no-repeat;
+    color: aliceblue;
+    line-height: 1.5;
+}
+
+html {
+    height: 100%;
+}
+
+/*Styling the Highscores and Timer in the header attribute*/
+header {
+    margin: 15;
+    padding: 2rem 7rem 6rem 3rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    min-height: 10vh;
+    font-size: 1.2em;
+}
+
+main {
+    margin: 15;
+    padding: 40px 350px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    font-size: larger;
+    letter-spacing: 0.20px;
+}
+
+/*Styling for Start button, and will be applied to other buttons too*/
+button {
+    background: rgb(57, 131, 216);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+    max-width: 255px;
+    padding: 10px 20px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin-top: 0.5em;
+}
+
+/*Making the final screens/windows match the formatting from the first main section*/
+.final-score,
+.highscores {
+    margin: 20;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.6em;
+}
