@@ -38,6 +38,7 @@ main {
     letter-spacing: 0.20px;
 }
 
+
 /*Styling for Start button, and will be applied to other buttons too*/
 button {
     background: rgb(57, 131, 216);
@@ -52,7 +53,7 @@ button {
     transition-duration: 0.15s;
     transition-property: background-color;
     transition-timing-function: linear;
-    margin-top: 0.5em;
+    margin-top: 1em;
 }
 
 /*Making the final screens/windows match the formatting from the first main section*/
