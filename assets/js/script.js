@@ -1,10 +1,13 @@
 //Variables to select and access elements from the html file
 var mainEl = document.getElementById("main");
-var viewHighscores = document.querySelector(".score-track");
 var timerEL = document.querySelector(".timer-text");
 var startButton = document.querySelector(".start-button");
-var finalScore = document.querySelector(".final-score");
 var titleEl = document.getElementById("title");
+var h2El1 = document.getElementById("completed");
+var h2El2 = document.getElementById("final");
+var formEl = document.querySelector("form");
+var finalScore = document.getElementById("score-track");
+var highScores = document.createElement("h3");
 console.log("test");
 
 var score = 0;
@@ -56,10 +59,7 @@ var selectedAnswer;
 var nextQuestion;
 
 //Calling the init function when the page loads, so that this is ran first
-//Need to fix getScore and getTimer or remove
 function init() {
-    //getScore();
-    //getTimer();
 }
 
 //Randomly select a question from the array to be the first question the user sees
@@ -73,12 +73,15 @@ function firstQuestion() {
 //Display the first question and answers block by removing the initial title and start button
 //Create buttons for each answer
 function sendMessage() {
-    titleEl.remove("title");
-    startButton.remove("start-button");
+    //titleEl.remove("title");
+    //startButton.remove("start-button");
+    titleEl.style.display = "none";
+    startButton.style.display = "none";
     mainEl.append(selectedQuestion.question);
 
     for (var i = 0; i < selectedQuestion.answers.length; i++) {
         var answerButtons = document.createElement("button");
+        answerButtons.classList.add("question-buttons");
         answerButtons.innerText = selectedQuestion.answers[i];
         mainEl.appendChild(answerButtons);
         answerButtons.onclick = function () {
@@ -104,6 +107,7 @@ function nextQuestion() {
     selectedQuestion = quizQuestions[randomQuestion];
     quizQuestions.splice(randomQuestion, 1);
     sendNextMessage();
+    completeQuiz();
 }
 
 //Display the next question on screen, selected randomly from the array 
@@ -113,6 +117,7 @@ function sendNextMessage() {
 
     for (var i = 0; i < selectedQuestion.answers.length; i++) {
         var answerButtons = document.createElement("button");
+        answerButtons.classList.add("question-buttons");
         answerButtons.innerText = selectedQuestion.answers[i];
         mainEl.appendChild(answerButtons);
         answerButtons.onclick = function () {
@@ -121,6 +126,40 @@ function sendNextMessage() {
         };
         console.log("for loop");
     }
+}
+
+//Function to check if timer is 0 or if the user answered all the questions
+function completeQuiz() {
+    if (timerCount <= 0 || quizQuestions.length <= 0) {
+        clearInterval(timer);
+        timerEL.textContent = "Timer: " + timerCount;
+        mainEl.innerHTML = "";
+        h2El1.innerHTML = "All Done!";
+        h2El2.innerHTML = "Your final score is " + timerCount;
+        localStorage.setItem("highscore", timerCount);
+        formEl.style.display = "block";
+    }
+}
+
+//Update the score of the user and set it to client storage
+function submittedScore() {
+    var initials = document.getElementById("initials-text").value;
+    h2El1.innerHTML = "";
+    h2El2.innerHTML = "";
+    formEl.style.display = "none";
+    highScores.innerHTML = "Thank you for playing " + initials + ". Your highscore is: " + timerCount;
+    mainEl.appendChild(highScores);
+    console.log("all done!");
+    localStorage.setItem(initials, localStorage.getItem("highscore"));
+    var restartButton = document.createElement("button");
+    restartButton.innerText = "Restart Quiz";
+    restartButton.onclick = function () {
+        formEl.style.display = "none";
+        mainEl.innerHTML = "";
+        startQuiz();
+    };
+    mainEl.appendChild(restartButton);
+    quizQuestions = [question1, question2, question3, question4, question5, question6];
 }
 
 //Start the quiz when the Start Quiz button is pressed
@@ -139,21 +178,12 @@ function startTimer() {
     timer = setInterval(function () {
         timerCount--;
         timerEL.textContent = "Timer: " + timerCount;
-        if (timerCount >= 0) {
-            nextQuestion;
-        }
-
+        //If timer hits 0, finish the quiz
         if (timerCount === 0) {
             clearInterval(timer);
-            finalScore;
+            completeQuiz();
         }
     }, 1000);
-}
-
-//Update the score of the user and set it to client storage
-function updateScore() {
-    finalScore.textContent = scoreCounter;
-    localStorage.setItem("scoreCounter", scoreCounter);
 }
 
 startButton.addEventListener("click", startQuiz);
@@ -161,3 +191,4 @@ startButton.addEventListener("click", startQuiz);
 init();
 
 console.log("test");
+formEl.style.display = "none";
