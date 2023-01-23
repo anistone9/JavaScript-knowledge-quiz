@@ -8,42 +8,28 @@ After completing the quiz, the user is prompted to enter his/her initials, and s
 
 ## Deployed application
 
+https://github.com/anistone9/Challenge-4/
 
-
-![image]
+![image](https://user-images.githubusercontent.com/58886869/214178330-e6df54ad-ce42-4cb5-9288-77e07acd26b1.png)
 
 ## Features
 
 This application includes a responsive design, and can be accessed and used on multiple platforms.   
-
 The project includes the following Javascript features learned in the bootcamp:
 
 Using console.log for troubleshooting   
-
 Global and Local variables (Scope)   
-
 Primitive Types   
-
 Logical Comparison Operators   
-
 If Statements   
-
 For Loops (Iteration)   
-
 Objects   
-
 Functions   
-
 DOM Traversal   
-
 Event Listeners   
-
 Window Object   
-
 Setting Attributes   
-
 Time Intervals   
-
 Local Storage
 
 ## Technologies used
