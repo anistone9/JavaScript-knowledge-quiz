@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Code Quiz</title>
 </head>
 
 <body>
     <header>
-        <!--Added timer in header for design purposes and keep separate from the quiz questions-->
+        <!--Added timer in header for design purposes and to keep separate from the quiz questions-->
         <div class="score-track">View Highscores</div>
         <div class="timer">
-            <div class="timer-text">Timer: </div>
+            <div class="timer-text">Timer:</div>
             <div class="timer-count"></div>
         </div>
     </header>
 
     <main>
-        <section>
-            <div class="title">
+        <section id="main">
+            <div class="title" id="title">
                 <h1>Coding Quiz Challenge</h1>
                 <p>Test your knowledge of Javascript fundamentals by answering the questions in this timed quiz. Note that incorrect answers will penalize your score-time by ten seconds.</p>
             </div>
@@ -43,6 +43,6 @@
             </div>
         </section>
     </main>
-    <script scr="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
