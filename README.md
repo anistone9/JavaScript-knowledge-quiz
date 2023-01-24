@@ -8,7 +8,7 @@ After completing the quiz, the user is prompted to enter his/her initials, and s
 
 ## Deployed application
 
-https://github.com/anistone9/Challenge-4/
+https://anistone9.github.io/Challenge-4/
 
 ![image](https://user-images.githubusercontent.com/58886869/214178330-e6df54ad-ce42-4cb5-9288-77e07acd26b1.png)
 
