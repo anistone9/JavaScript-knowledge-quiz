@@ -8,7 +8,7 @@ After completing the quiz, the user is prompted to enter his/her initials, and s
 
 ## Deployed application
 
-https://anistone9.github.io/Challenge-4/
+https://anistone9.github.io/JavaScript-knowledge-quiz/    
 
 ![image](https://user-images.githubusercontent.com/58886869/214178330-e6df54ad-ce42-4cb5-9288-77e07acd26b1.png)
 
